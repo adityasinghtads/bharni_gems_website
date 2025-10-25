@@ -1,0 +1,258 @@
+/* Load Local Font */
+@font-face {
+    font-family: 'Inkburrow';
+    src: url('./fonts/Inkburro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: OpenSans, sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Video Background */
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  
+  /* Black transparent overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: -1;
+  }
+  
+  /* Content Area */
+  .content {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /* Heading in Inkburrow */
+  .main-heading {
+    font-family: 'Inkburrow';
+    font-size: 6rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInUp 1.5s forwards;
+  }
+  
+  /* Tagline in OpenSans */
+  .tagline {
+    font-size: 1.5rem;
+    /* margin-bottom: 30px; */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 0.5s;
+  }
+  
+  /* Button */
+  #exploreBtn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    animation-delay: 1s;
+  }
+  
+  #exploreBtn:hover {
+    background: #ff4757;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* === Floating Centered Navbar === */
+.floating-navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  margin-right: 0.5rem;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* === NAV MENU LINKS WITH SLIDE-UP HOVER EFFECT === */
+.nav-menu a {
+  position: relative;
+  display: inline-block;
+  color: rgba(233, 232, 227, 0.6); /* greyed text initially */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a::before {
+  content: attr(data-text); /* copy of the text itself */
+  position: absolute;
+  left: 0;
+  top: 100%; /* starts below the link */
+  width: 100%;
+  height: 100%;
+  color: #fff; /* white version that slides in */
+  transition: transform 1s ease;
+  transform: translateY(0);
+}
+
+.nav-menu a:hover::before {
+  transform: translateY(-100%); /* moves upward into place */
+}
+
+.nav-menu a:hover {
+  color: transparent; /* hides original grey text during animation */
+}
+
+#exploreBtn{
+  margin-top: 20px;
+}
+
+
+.animated-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.changing-word-box {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 6px 16px;
+  margin-left: 5px;
+  overflow: hidden;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s ease-in-out;
+  white-space: nowrap;
+}
+
+#changingWord {
+  color: white;
+  font-weight: 500;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
+}
+
+#changingWord.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Animation for smooth upward text transition */
+@keyframes wordFade {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10%, 40% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  60%, 100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .floating-navbar {
+    top: 1rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    gap: 1rem;
+  }
+
+  
+}
+
+  
+  

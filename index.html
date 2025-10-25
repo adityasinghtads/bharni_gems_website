@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharni Jems</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 🎥 Video Background -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="./background1.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- 🌟 Center Floating Navbar -->flowe
+  <nav class="floating-navbar">
+    <div class="nav-inner">
+      <!-- <div class="nav-left">
+        <div class="logo-dot"></div>
+      </div> -->
+      <ul class="nav-menu">
+        <li><a href="#Discover" data-text="Discover">Discover</a></li>
+        <li><a href="#Vision" data-text="Vision">Vision</a></li>
+        <li><a href="#contact" data-text="Contact">Contact</a></li>
+        <li><a href="./aboutus.html" data-text="About Us">About Us</a></li>
+      </ul>
+
+     
+      <!-- <div class="nav-right">
+        <a href="#login" class="btn btn-login">Log In</a>
+        <a href="#signup" class="btn btn-signup">Sign Up</a>
+      </div> -->
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1 class="main-heading">Bharni Jems</h1>
+    <p class="tagline">World’s most fabulous diamond jewellers</p>
+    <div class="animated-text">
+      <span>A discovery engine for&nbsp;</span>
+      <span class="changing-word-box">
+        <span id="changingWord">creatives</span>
+      </span>
+    </div>    
+    <button id="exploreBtn">Explore</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
