@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Inkburrow';
     src: url('./fonts/Inkburro.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
   }
   
@@ -37,7 +37,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.2);
     z-index: -1;
   }
   
@@ -46,7 +46,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    color: #fff;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,7 +58,8 @@
   .main-heading {
     font-family: 'Inkburrow';
     font-size: 6rem;
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
     opacity: 0;
     transform: translateY(-50px);
     animation: fadeInUp 1.5s forwards;
@@ -66,21 +67,25 @@
   
   /* Tagline in OpenSans */
   .tagline {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     /* margin-bottom: 30px; */
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInUp 1.5s forwards;
     animation-delay: 0.5s;
+    color: #918e8e;
   }
   
   /* Button */
   #exploreBtn {
-    padding: 12px 28px;
+    /* padding: 12px 28px; */
+    padding: 8px 20px;
     border: none;
     border-radius: 25px;
-    background: #ff6b6b;
-    color: #fff;
+    /* background: #ff6b6b; */
+    background: #f8f8f8;
+    /* color: #fff; */
+    color: black;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
@@ -90,7 +95,9 @@
   }
   
   #exploreBtn:hover {
-    background: #ff4757;
+    /* background: #ff4757; */
+    background: #424141;
+    color: white;
   }
   
   /* Animation */
@@ -183,7 +190,9 @@
   color: rgba(255, 255, 255, 0.6);
   font-size: 1.4rem;
   font-weight: 400;
-  margin-top: 15px;
+  margin-top: 55px;
+  /* margin-bottom: -10px; */
+  /* margin-top: 15px; */
   display: flex;
   align-items: center;
   justify-content: center;
