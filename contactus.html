@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Bharni Jems</title>
+  <link rel="stylesheet" href="./contact.css" />
+  <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- 🎥 Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="./cont1.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Main Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+
+      <!-- Info Section -->
+      <div class="contact-info">
+        <h2>Contact Us</h2>
+        <p class="subtitle">We’d love to hear from you — let’s connect!</p>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info-text">
+            <h4>Address</h4>
+            <p>4671 Sugar Camp Road,<br>Owatonna, Minnesota, 55060</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone"></i></div>
+          <div class="info-text">
+            <h4>Phone</h4>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <h4>Email</h4>
+            <p>info@bharni-jems.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <h3>Send us a Message</h3>
+
+          <div class="form-group">
+            <input type="text" id="name" name="name" required />
+            <label for="name">Full Name</label>
+          </div>
+
+          <div class="form-group">
+            <input type="tel" id="mobile" name="mobile" required />
+            <label for="mobile">Mobile Number</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="./contact.js"></script>
+</body>
+</html>
