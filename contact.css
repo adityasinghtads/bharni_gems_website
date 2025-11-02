@@ -201,6 +201,8 @@ body, html {
   background: #fff;
 }
 
+    /* Navbar styles are now in nav.css */
+
 /* ===== MOBILE OPTIMIZATION ===== */
 @media (max-width: 900px) {
   .contact-container {

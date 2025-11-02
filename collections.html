@@ -3,28 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bharni Jems</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="collections.css" />
   <link rel="stylesheet" href="nav.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <!-- 🎥 Video Background -->
-  <video autoplay muted loop playsinline id="bg-video">
-    <!-- <source src="./test1.mp4" type="video/mp4" /> -->
-    <source src="./landing1.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-
-  <!-- Overlay -->
-  <div class="overlay"></div>
-
   <!-- 🌟 Center Floating Navbar -->
   <nav class="floating-navbar">
     <div class="nav-inner">
-      <!-- <div class="nav-left">
-        <div class="logo-dot"></div>
-      </div> -->
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -41,12 +27,6 @@
         <li><a href="./contactus.html" data-text="Contact">Contact</a></li>
         <li><a href="./aboutus.html" data-text="About Us">About Us</a></li>
       </ul>
-
-     
-      <!-- <div class="nav-right">
-        <a href="#login" class="btn btn-login">Log In</a>
-        <a href="#signup" class="btn btn-signup">Sign Up</a>
-      </div> -->
     </div>
   </nav>
 
@@ -57,21 +37,17 @@
     <i class="fa-brands fa-whatsapp"></i>
     
   </div>
+  <section class="discover">
+    <h2 class="section-title">Our Collections</h2>
+    <div class="scroll-container" id="cardContainer"></div>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1 class="main-heading">Bharni gems</h1>
-    <p class="tagline">The Most Fabulous Diamond Jewellers of the World</p>
-    <div class="animated-text">
-      <span>Delivering&nbsp;</span>
-      <span class="changing-word-box">
-        <span id="changingWord">creatives</span>
-      </span>
-    </div>    
-    <button id="exploreBtn">Explore</button>
-  </div>
+    <h2 class="sub-title" id="subTitle"></h2>
+    <div class="image-section" id="imageSection">
+      <!-- Images will appear here on card click -->
+    </div>
+  </section>
 
   <script src="nav.js"></script>
-  <script src="script.js"></script>
+  <script src="collections.js"></script>
 </body>
 </html>
