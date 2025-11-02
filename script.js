@@ -1,17 +1,9 @@
 // Explore button action
 document.getElementById("exploreBtn").addEventListener("click", () => {
-  alert("Welcome to Bharni Jems ✨");
+  window.location.href = "./collections.html";
 });
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("navbarMenu");
-const right = document.querySelector(".navbar-right");
-
-// hamburger.addEventListener("click", () => {
-//   hamburger.classList.toggle("active");
-//   menu.classList.toggle("active");
-//   right.classList.toggle("active");
-// });
+// Hamburger menu code is now in nav.js
 
 const words = ["creatives", "designers", "innovators", "artists", "dreamers"];
 let index = 0;

@@ -5,9 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | Bharni Jems</title>
   <link rel="stylesheet" href="./contact.css" />
-  <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+   <!-- 🌟 Center Floating Navbar -->
+   <nav class="floating-navbar">
+    <div class="nav-inner">
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu">
+        <li>
+          <a href="./index.html" aria-label="Home">
+            <img src="./home.svg" alt="Home" class="nav-icon" />
+          </a>
+        </li>
+        <li><a href="./collections.html" data-text="Collections">Collections</a></li>
+        <li><a href="./vision.html" data-text="Vision">Vision</a></li>
+        <li><a href="./contactus.html" data-text="Contact">Contact</a></li>
+        <li><a href="./aboutus.html" data-text="About Us">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 🌐 Social Media Links (Top-Right Corner) -->
+  <div class="social-links">
+    <i class="fa-brands fa-instagram"></i>
+    <i class="fa-brands fa-x-twitter"></i>
+    <i class="fa-brands fa-linkedin-in"></i>
+  </div>
+
+
   <!-- 🎥 Background Video -->
   <video autoplay muted loop playsinline id="bg-video">
     <source src="./cont1.mp4" type="video/mp4" />
@@ -77,6 +108,7 @@
     </div>
   </section>
 
+  <script src="nav.js"></script>
   <script src="./contact.js"></script>
 </body>
 </html>

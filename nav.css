@@ -1,114 +1,4 @@
-/* Load Local Font */
-@font-face {
-    font-family: 'Inkburrow';
-    src: url('./fonts/Inkburro.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-  }
-  
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    font-family: OpenSans, sans-serif;
-    overflow: hidden;
-  }
-  
-  /* Video Background */
-  #bg-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: -2;
-  }
-  
-  /* Black transparent overlay */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    z-index: -1;
-  }
-  
-  /* Content Area */
-  .content {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* Heading in Inkburrow */
-  .main-heading {
-    font-family: 'Inkburrow';
-    font-size: 6rem;
-    /* margin-bottom: 10px; */
-    margin-bottom: 10px;
-    opacity: 0;
-    transform: translateY(-50px);
-    animation: fadeInUp 1.5s forwards;
-  }
-  
-  /* Tagline in OpenSans */
-  .tagline {
-    font-size: 1.1rem;
-    /* margin-bottom: 30px; */
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1.5s forwards;
-    animation-delay: 0.5s;
-    color: #918e8e;
-  }
-  
-  /* Button */
-  #exploreBtn {
-    /* padding: 12px 28px; */
-    padding: 8px 20px;
-    border: none;
-    border-radius: 25px;
-    /* background: #ff6b6b; */
-    background: #f8f8f8;
-    /* color: #fff; */
-    color: black;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-    opacity: 0;
-    animation: fadeInUp 1.5s forwards;
-    animation-delay: 1s;
-  }
-  
-  #exploreBtn:hover {
-    /* background: #ff4757; */
-    background: #424141;
-    color: white;
-  }
-  
-  /* Animation */
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* === Floating Centered Navbar === */
+/* === Floating Centered Navbar === */
 .floating-navbar {
   position: fixed;
   top: 2rem;
@@ -196,69 +86,6 @@
   filter: invert(69%) sepia(92%) saturate(350%) hue-rotate(180deg); /* subtle hover tint */
 }
 
-#exploreBtn{
-  margin-top: 20px;
-}
-
-
-.animated-text {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin-top: 55px;
-  /* margin-bottom: -10px; */
-  /* margin-top: 15px; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.changing-word-box {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
-  padding: 6px 16px;
-  margin-left: 5px;
-  overflow: hidden;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: width 0.4s ease-in-out;
-  white-space: nowrap;
-}
-
-#changingWord {
-  color: white;
-  font-weight: 500;
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.5s ease;
-}
-
-#changingWord.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* Animation for smooth upward text transition */
-@keyframes wordFade {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  10%, 40% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  60%, 100% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
-
-
 /* === Hamburger Menu Button === */
 .hamburger {
   display: none;
@@ -295,6 +122,30 @@
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* 🌐 Social Media Links Layout */
+.social-links {
+  position: fixed;
+  top: 42px;
+  right: 80px;
+  display: flex;
+  gap: 18px;
+  z-index: 1000;
+}
+
+.social-links i {
+  color: #fff;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.social-links i:hover {
+  color: #00acee;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .floating-navbar {
@@ -302,7 +153,7 @@
     padding: 0.6rem 1rem;
     width: auto;
     max-width: 95vw;
-    left: 4%;
+    left: 8%;
   }
 
   .nav-inner {
@@ -358,18 +209,19 @@
     margin: 0 auto;
   }
 
-  .main-heading {
-    font-size: 3.5rem;
+  .social-links {
+    top: 15px;
+    right: 15px;
+    gap: 12px;
   }
 
-  .tagline {
-    font-size: 0.95rem;
-  }
-
-  .animated-text {
+  .social-links i {
     font-size: 1.1rem;
-    flex-wrap: wrap;
-    margin-top: 35px;
+  }
+
+  /* Adjust overlay height for mobile */
+  body::before {
+    height: 75px;
   }
 }
 
@@ -377,18 +229,6 @@
   .floating-navbar {
     top: 0.75rem;
     padding: 0.5rem 0.75rem;
-  }
-
-  .main-heading {
-    font-size: 2.5rem;
-  }
-
-  .tagline {
-    font-size: 0.85rem;
-  }
-
-  .animated-text {
-    font-size: 1rem;
   }
 
   .nav-menu {
@@ -400,7 +240,39 @@
     padding: 0.6rem 0.75rem;
     font-size: 0.85rem;
   }
+
+  .social-links {
+    top: 20px;
+    right: 20px;
+    gap: 10px;
+  }
+
+  .social-links i {
+    font-size: 1rem;
+  }
+
+  /* Adjust overlay height for smaller mobile */
+  body::before {
+    height: 65px;
+  }
 }
 
-  
-  
+body, html {
+  height: 100%;
+  font-family: OpenSans, sans-serif;
+  /* overflow: hidden; */
+}
+
+/* Content masking overlay - hides scrollable content in navbar/social links area */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #000;
+  z-index: 999;
+  pointer-events: none;
+}
+
