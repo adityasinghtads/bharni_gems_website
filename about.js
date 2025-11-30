@@ -1,19 +1,61 @@
+// Hide loader when page is fully loaded
+window.addEventListener('load', () => {
+  const video = document.getElementById("scrollVideo");
+  const loader = document.getElementById('pageLoader');
+  
+  const hideLoader = () => {
+    setTimeout(() => {
+      if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(() => {
+          loader.remove();
+        }, 500);
+      }
+    }, 500);
+  };
+  
+  if (video) {
+    if (video.readyState >= 3) {
+      hideLoader();
+    } else {
+      video.addEventListener('canplaythrough', hideLoader, { once: true });
+      setTimeout(hideLoader, 2000);
+    }
+  } else {
+    hideLoader();
+  }
+});
+
 const video = document.getElementById("scrollVideo");
 
 let videoDuration = 0;
+let isScrolling = false;
+let scrollTimeout;
+let lastScrollTop = 0;
+
+// Pause video initially to prevent autoplay issues on mobile
+if (video) {
+  video.pause();
+  video.currentTime = 0;
+}
 
 // Wait until metadata is available
 video.addEventListener("loadedmetadata", () => {
   videoDuration = video.duration;
   console.log("Video duration loaded:", videoDuration);
+  
+  // Ensure video is paused
+  video.pause();
+  video.currentTime = 0;
 
   // Start the scroll-sync only after we know the duration
-  requestAnimationFrame(syncVideoToScroll);
+  syncVideoToScroll();
 });
 
+// Use scroll event instead of continuous requestAnimationFrame for better mobile performance
+let lastVideoTime = -1;
 function syncVideoToScroll() {
   if (!videoDuration || isNaN(videoDuration)) {
-    requestAnimationFrame(syncVideoToScroll);
     return;
   }
 
@@ -26,18 +68,35 @@ function syncVideoToScroll() {
   // 🌸 Apply easing (nonlinear motion)
   // EaseInOutCubic — starts slow, speeds up, then slows down again
   const easedFraction = easeInOutCubic(scrollFraction);
-  console.log("Eased fraction:", easedFraction);
 
   // Compute video time from eased fraction
   const videoTime = easedFraction * videoDuration;
-  console.log("Video time:", videoTime);
 
-  if (!isNaN(videoTime)) {
+  // Only update if the time has changed significantly (prevents unnecessary updates)
+  if (!isNaN(videoTime) && Math.abs(videoTime - lastVideoTime) > 0.1) {
+    // Pause video to prevent autoplay, then set time
+    video.pause();
     video.currentTime = videoTime;
+    lastVideoTime = videoTime;
   }
-
-  requestAnimationFrame(syncVideoToScroll);
 }
+
+// Throttled scroll handler for better mobile performance
+window.addEventListener('scroll', () => {
+  isScrolling = true;
+  syncVideoToScroll();
+  
+  // Clear existing timeout
+  clearTimeout(scrollTimeout);
+  
+  // After scrolling stops, ensure video is paused
+  scrollTimeout = setTimeout(() => {
+    isScrolling = false;
+    if (video) {
+      video.pause();
+    }
+  }, 150);
+}, { passive: true });
 
 // 🎯 Easing function
 function easeInOutCubic(t) {

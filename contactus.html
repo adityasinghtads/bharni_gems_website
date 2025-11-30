@@ -9,6 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <div class="loader-text">BHARNI GEMS</div>
+    </div>
+  </div>
+
    <!-- 🌟 Center Floating Navbar -->
    <nav class="floating-navbar">
     <div class="nav-inner">
@@ -32,11 +40,11 @@
   </nav>
 
   <!-- 🌐 Social Media Links (Top-Right Corner) -->
-  <div class="social-links">
+  <!-- <div class="social-links">
     <i class="fa-brands fa-instagram"></i>
     <i class="fa-brands fa-x-twitter"></i>
     <i class="fa-brands fa-linkedin-in"></i>
-  </div>
+  </div> -->
 
 
   <!-- 🎥 Background Video -->
@@ -50,63 +58,103 @@
 
   <!-- Main Section -->
   <section class="contact-section">
-    <div class="contact-container">
+    <div class="contact-wrapper">
+      <!-- Main Heading -->
+      <div class="contact-header">
+        <h1 class="main-title">contact us</h1>
+      </div>
 
-      <!-- Info Section -->
-      <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p class="subtitle">We’d love to hear from you — let’s connect!</p>
-
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="info-text">
-            <h4>Address</h4>
-            <p>4671 Sugar Camp Road,<br>Owatonna, Minnesota, 55060</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-phone"></i></div>
-          <div class="info-text">
-            <h4>Phone</h4>
-            <p>+91 98765 43210</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon"><i class="fas fa-envelope"></i></div>
-          <div class="info-text">
-            <h4>Email</h4>
-            <p>info@bharni-jems.com</p>
-          </div>
+      <!-- Animated Vertical Line at the end of viewport -->
+      <div class="scroll-hint">
+        <div class="vertical-line">
+          <div class="line-dot"></div>
         </div>
       </div>
 
-      <!-- Form Section -->
-      <div class="contact-form">
-        <form id="contactForm">
-          <h3>Send us a Message</h3>
+      <!-- Content below the line (requires scrolling) -->
+      <div class="content-below-line">
+        <!-- Ask Us Section -->
+        <div class="ask-section">
+          <h2 class="ask-title">Ask us a question</h2>
+        </div>
 
-          <div class="form-group">
-            <input type="text" id="name" name="name" required />
-            <label for="name">Full Name</label>
-          </div>
-
-          <div class="form-group">
-            <input type="tel" id="mobile" name="mobile" required />
-            <label for="mobile">Mobile Number</label>
-          </div>
-
-          <div class="form-group">
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <label for="message">Your Message</label>
-          </div>
-
-          <button type="submit" class="btn">Send Message</button>
-        </form>
+        <!-- Contact Us Button -->
+        <div class="contact-button-section">
+          <button class="contact-us-btn" id="contactUsBtn">Contact Us</button>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- Contact Sheet/Modal -->
+  <div class="contact-sheet" id="contactSheet">
+    <div class="sheet-overlay" id="sheetOverlay"></div>
+    <div class="sheet-content">
+      <button class="sheet-close" id="sheetClose">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="sheet-container">
+        <!-- Info Section -->
+        <div class="contact-info">
+          <div class="welcome-section">
+            <h3 class="welcome-title">Welcome to Bharni Gems</h3>
+            <p class="welcome-text">
+              For general inquiries, you can reach us Monday - Friday, 9:00 - 17:00 IST
+            </p>
+          </div>
+
+          <div class="contact-details">
+            <div class="detail-item">
+              <div class="detail-label">Phone</div>
+              <div class="detail-value">
+                <a href="tel:+919876543210">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-label">Email</div>
+              <div class="detail-value">
+                <a href="mailto:info@bharni-jems.com">info@bharni-jems.com</a>
+              </div>
+            </div>
+
+            <div class="detail-item">
+              <div class="detail-label">Address</div>
+              <div class="detail-value">
+                4671 Sugar Camp Road,<br>
+                Owatonna, Minnesota, 55060
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="contact-form">
+          <form id="contactForm">
+            <h3 class="form-title">Send us a Message</h3>
+
+            <div class="form-group">
+              <input type="text" id="name" name="name" required />
+              <label for="name">Full Name</label>
+            </div>
+
+            <div class="form-group">
+              <input type="tel" id="mobile" name="mobile" required />
+              <label for="mobile">Mobile Number</label>
+            </div>
+
+            <div class="form-group">
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <label for="message">Your Message</label>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="nav.js"></script>
   <script src="./contact.js"></script>

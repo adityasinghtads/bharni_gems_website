@@ -1,3 +1,34 @@
+// Hide loader when page is fully loaded
+window.addEventListener('load', () => {
+  const video = document.getElementById('bg-video');
+  const loader = document.getElementById('pageLoader');
+  
+  // Wait for video to be ready or timeout after 2 seconds
+  const hideLoader = () => {
+    setTimeout(() => {
+      if (loader) {
+        loader.classList.add('hidden');
+        // Remove loader from DOM after animation
+        setTimeout(() => {
+          loader.remove();
+        }, 500);
+      }
+    }, 500); // Small delay to ensure smooth transition
+  };
+  
+  if (video) {
+    if (video.readyState >= 3) { // HAVE_FUTURE_DATA or higher
+      hideLoader();
+    } else {
+      video.addEventListener('canplaythrough', hideLoader, { once: true });
+      // Fallback timeout
+      setTimeout(hideLoader, 2000);
+    }
+  } else {
+    hideLoader();
+  }
+});
+
 // Explore button action
 document.getElementById("exploreBtn").addEventListener("click", () => {
   window.location.href = "./collections.html";

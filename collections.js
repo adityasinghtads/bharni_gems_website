@@ -113,3 +113,17 @@ const cards = [
     showGallery(cards[0].gallery, cards[0].name, false);
   }
   
+  // Hide loader when page is fully loaded
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('pageLoader');
+    if (loader) {
+      setTimeout(() => {
+        loader.classList.add('hidden');
+        setTimeout(() => {
+          loader.remove();
+        }, 500);
+      }, 500);
+    }
+  });
+
+  
