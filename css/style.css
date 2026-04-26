@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Tenor+Sans&display=swap');
+
 /* Load Local Font */
 @font-face {
     font-family: 'Inkburrow';
@@ -15,9 +17,14 @@
   
   body, html {
     height: 100%;
-    font-family: OpenSans, sans-serif;
+    font-family: 'Tenor Sans', sans-serif;
     overflow: hidden;
     background-color: transparent; /* Prevent white flash */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
   }
   
   /* Loader Styles */
@@ -113,6 +120,10 @@
     transform: translateY(-50px);
     animation: fadeInUp 1.5s forwards;
   }
+
+.main-heading .brand-word {
+  color: #c9a96e;
+}
   
   /* Tagline in OpenSans */
   .tagline {
@@ -132,9 +143,9 @@
     border: none;
     border-radius: 25px;
     /* background: #ff6b6b; */
-    background: #f8f8f8;
+    background: #c9a96e;
     /* color: #fff; */
-    color: black;
+    color: #111111;
     font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
@@ -145,8 +156,8 @@
   
   #exploreBtn:hover {
     /* background: #ff4757; */
-    background: #424141;
-    color: white;
+    background: #b89657;
+    color: #111111;
   }
   
   /* Animation */
@@ -189,7 +200,7 @@
   font-size: 1.85rem;
   line-height: 1;
   text-decoration: none;
-  color: #ffffff;
+  color: #c9a96e;
   white-space: nowrap;
   padding: 0.2rem 0.35rem;
   opacity: 0.95;
@@ -238,7 +249,7 @@
   top: 100%; /* starts below the link */
   width: 100%;
   height: 100%;
-  color: #fff; /* white version that slides in */
+  color: #c9a96e;
   transition: transform 1s ease;
   transform: translateY(0);
 }
@@ -263,7 +274,19 @@
 .nav-menu li a:hover .nav-icon {
   opacity: 1;
   transform: scale(1.1);
-  filter: invert(69%) sepia(92%) saturate(350%) hue-rotate(180deg); /* subtle hover tint */
+  filter: invert(72%) sepia(25%) saturate(610%) hue-rotate(358deg) brightness(94%) contrast(90%);
+}
+
+.nav-menu a.nav-active {
+  color: #c9a96e;
+}
+
+.nav-menu a.nav-active::before {
+  content: none;
+}
+
+.nav-menu a.nav-active:hover {
+  color: #c9a96e;
 }
 
 #exploreBtn{
@@ -432,6 +455,10 @@
 
   .nav-menu a:hover {
     background: transparent;
+  }
+
+  .nav-menu a.nav-active {
+    color: #c9a96e;
   }
 
   .nav-icon {

@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Tenor+Sans&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
 }
 
 body, html {
@@ -118,7 +118,7 @@ body, html {
   /* text-transform: lowercase; */
   color: #ffffff;
   margin-bottom: 20px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .header-divider {
@@ -212,7 +212,7 @@ body, html {
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
 }
 
 .contact-us-btn:hover {
@@ -327,6 +327,7 @@ body, html {
   letter-spacing: 0.5px;
   color: #ffffff;
   margin-bottom: 15px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .welcome-text {
@@ -389,6 +390,7 @@ body, html {
   letter-spacing: 0.5px;
   color: #ffffff;
   margin-bottom: 35px;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 .form-group {
@@ -408,7 +410,7 @@ body, html {
   font-size: 1rem;
   font-weight: 300;
   transition: border-color 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
 }
 
 .form-group textarea {
@@ -456,7 +458,7 @@ body, html {
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Tenor Sans', sans-serif;
   margin-top: 10px;
 }
 
