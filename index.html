@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bharni Jems</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="nav.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- <link rel="stylesheet" href="nav.css" /> -->
+  <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -20,7 +22,7 @@
   <!-- 🎥 Video Background -->
   <video autoplay muted loop playsinline id="bg-video">
     <!-- <source src="./test1.mp4" type="video/mp4" /> -->
-    <source src="./landing1.mp4" type="video/mp4" />
+    <source src="./assets/videos/landing1.mp4" type="video/mp4" />
   </video>
 
   <!-- Overlay -->
@@ -40,13 +42,13 @@
       <ul class="nav-menu">
         <li>
           <a href="./index.html" aria-label="Home">
-            <img src="./home.svg" alt="Home" class="nav-icon" />
+            <img src="./assets/images/home.svg" alt="Home" class="nav-icon" />
           </a>
         </li>
-        <li><a href="./collections.html" data-text="Collections">Collections</a></li>
-        <li><a href="./vision.html" data-text="Vision">Vision</a></li>
-        <li><a href="./contactus.html" data-text="Contact">Contact</a></li>
-        <li><a href="./aboutus.html" data-text="About Us">About Us</a></li>
+        <li><a href="./pages/collections.html" data-text="Collections">Collections</a></li>
+        <li><a href="./pages/vision.html" data-text="Vision">Vision</a></li>
+        <li><a href="./pages/contactus.html" data-text="Contact">Contact</a></li>
+        <li><a href="./pages/aboutus.html" data-text="About Us">About Us</a></li>
       </ul>
 
      
@@ -78,7 +80,7 @@
     <button id="exploreBtn">Explore</button>
   </div>
 
-  <script src="nav.js"></script>
-  <script src="script.js"></script>
+  <script src="./js/nav.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
