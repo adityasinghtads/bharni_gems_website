@@ -1,8 +1,7 @@
 const cards = [
     {
       id: 1,
-      name: "Necklace",
-      avatar: "https://i.pravatar.cc/100?img=5",
+      name: "Necklaces",
       image: "https://picsum.photos/id/1011/400/250",
       gallery: [
         "https://picsum.photos/id/1023/500/500",
@@ -15,7 +14,6 @@ const cards = [
     {
       id: 2,
       name: "Earrings",
-      avatar: "https://i.pravatar.cc/100?img=8",
       image: "https://picsum.photos/id/1063/400/250",
       gallery: [
         "https://picsum.photos/id/1073/500/500",
@@ -27,8 +25,7 @@ const cards = [
     },
     {
       id: 3,
-      name: "Bridal Set",
-      avatar: "https://i.pravatar.cc/100?img=12",
+      name: "Bracelets",
       image: "https://picsum.photos/id/1113/400/250",
       gallery: [
         "https://picsum.photos/id/1123/500/500",
@@ -38,68 +35,33 @@ const cards = [
     },
     {
       id: 4,
-      name: "Ring",
-      avatar: "https://i.pravatar.cc/100?img=15",
+      name: "Rings",
       image: "https://picsum.photos/id/1153/400/250",
       gallery: [
         "https://picsum.photos/id/1163/500/500",
         "https://picsum.photos/id/1173/500/500",
         "https://picsum.photos/id/1183/500/500"
       ]
-    },
-    {
-        id: 5,
-        name: "Bracelet",
-      avatar: "https://i.pravatar.cc/100?img=5",
-      image: "https://picsum.photos/id/1011/400/250",
-      gallery: [
-        "https://picsum.photos/id/1023/500/500",
-        "https://picsum.photos/id/1033/500/500",
-        "https://picsum.photos/id/1043/500/500",
-        "https://picsum.photos/id/1053/500/500",
-      ]
-      },
-      {
-        id: 6,
-        name: "Bangles",
-      avatar: "https://i.pravatar.cc/100?img=5",
-      image: "https://picsum.photos/id/1011/400/250",
-      gallery: [
-        "https://picsum.photos/id/1023/500/500",
-        "https://picsum.photos/id/1033/500/500",
-        "https://picsum.photos/id/1043/500/500",
-        "https://picsum.photos/id/1053/500/500"
-      ]
-      }
+    }
   ];
   
   const cardContainer = document.getElementById("cardContainer");
   const imageSection = document.getElementById("imageSection");
   const subTitle = document.getElementById("subTitle");
   
-  cards.forEach((card) => {
-    const cardEl = document.createElement("div");
-    cardEl.classList.add("card");
-    cardEl.innerHTML = `
-      <img class="card-image" src="${card.image}" alt="${card.name}" />
-      <div class="card-info">
-        <div class="meta">
-          <h4>${card.name}</h4>
-        </div>
-      </div>
-    `;
-    cardEl.addEventListener("click", () => showGallery(card.gallery, card.name));
-    cardContainer.appendChild(cardEl);
-   
-  });
-  
-  function showGallery(images, name, shouldScroll = true) {
+  function setActiveCard(activeEl) {
+    document.querySelectorAll(".card.is-active").forEach((el) => el.classList.remove("is-active"));
+    if (activeEl) activeEl.classList.add("is-active");
+  }
+
+  function showGallery(images, title, shouldScroll = true) {
     imageSection.innerHTML = "";
-    subTitle.innerHTML = `Gallery of ${name}`;
+    subTitle.innerHTML = title;
    
     images.forEach((src) => {
       const img = document.createElement("img");
       img.src = src;
+      img.alt = title;
       imageSection.appendChild(img);
     });
     imageSection.classList.add("show");
@@ -108,10 +70,40 @@ const cards = [
     }
   }
 
-  // Show gallery of first card by default
-  if (cards.length > 0) {
-    showGallery(cards[0].gallery, cards[0].name, false);
+  function showAllJewelry(shouldScroll = false) {
+    setActiveCard(null);
+    const allImages = cards.flatMap((c) => c.gallery);
+    showGallery(allImages, "Jewelry", shouldScroll);
   }
+
+  cards.forEach((card) => {
+    const cardEl = document.createElement("div");
+    cardEl.classList.add("card");
+    cardEl.innerHTML = `
+      <div class="card-media">
+        <img class="card-image" src="${card.image}" alt="${card.name}" />
+      </div>
+      <div class="card-label">${card.name}</div>
+    `;
+    cardEl.setAttribute("role", "button");
+    cardEl.setAttribute("tabindex", "0");
+    cardEl.setAttribute("aria-label", `Open ${card.name}`);
+    const open = () => {
+      setActiveCard(cardEl);
+      showGallery(card.gallery, card.name, true);
+    };
+    cardEl.addEventListener("click", open);
+    cardEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open();
+      }
+    });
+    cardContainer.appendChild(cardEl);
+  });
+
+  // Default: show all jewelry
+  showAllJewelry(false);
   
   // Hide loader when page is fully loaded
   window.addEventListener('load', () => {
