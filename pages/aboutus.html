@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vision - Scroll Video</title>
-  <link rel="stylesheet" href="vision.css">
-  <link rel="stylesheet" href="nav.css">
+  <title>About Us - Scroll Video</title>
+  <!-- <link rel="stylesheet" href="about.css"> -->
+  <link rel="stylesheet" href="/css/about.css">
+  <!-- <link rel="stylesheet" href="nav.css"> -->
+  <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -27,8 +29,8 @@
       </button>
       <ul class="nav-menu">
         <li>
-          <a href="./index.html" aria-label="Home">
-            <img src="./home.svg" alt="Home" class="nav-icon" />
+          <a href="/index.html" aria-label="Home">
+            <img src="/assets/images/home.svg" alt="Home" class="nav-icon" />
           </a>
         </li>
         <li><a href="./collections.html" data-text="Collections">Collections</a></li>
@@ -51,12 +53,11 @@
 
     <video id="scrollVideo" playsinline muted preload="auto">
       <!-- <source src="./test7.mp4" type="video/mp4"> -->
-      <source src="./vision_6.mp4" type="video/mp4">
+      <source src="/assets/videos/about.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <div class="overlay"></div>
   </div>
-
 
   <div class="content">
     <section>
@@ -77,7 +78,7 @@
     </section>
   </div>
 
-  <script src="nav.js"></script>
-  <script src="vision.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/about.js"></script>
 </body>
 </html>
