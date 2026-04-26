@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
 
 // Explore button action
 document.getElementById("exploreBtn").addEventListener("click", () => {
-  window.location.href = "./collections.html";
+  window.location.href = "./pages/collections.html";
 });
 
 // Hamburger menu code is now in nav.js

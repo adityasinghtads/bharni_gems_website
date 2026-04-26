@@ -181,6 +181,27 @@
   gap: 1.5rem;
 }
 
+.nav-brand {
+  position: fixed;
+  top: 2rem;
+  left: 1.25rem;
+  font-family: 'Inkburrow', serif;
+  font-size: 1.85rem;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+  padding: 0.2rem 0.35rem;
+  opacity: 0.95;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1101;
+}
+
+.nav-brand:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
 .logo-dot {
   width: 8px;
   height: 8px;
@@ -348,49 +369,69 @@
 @media (max-width: 768px) {
   .floating-navbar {
     top: 1rem;
-    padding: 0.6rem 1rem;
-    width: auto;
-    max-width: 95vw;
     left: 50%;
     transform: translateX(-50%);
+    padding: 0.5rem 0.7rem;
+    border-radius: 24px;
+    width: fit-content;
+    max-width: 98vw;
   }
 
   .nav-inner {
-    position: relative;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    width: auto;
+    gap: 0.4rem;
+  }
+
+  .nav-brand {
+    top: 0.95rem;
+    left: 0.75rem;
+    transform: none;
+    font-size: 1.2rem;
   }
 
   .hamburger {
-    display: none; /* Hide hamburger menu */
+    display: none;
   }
 
   .nav-menu {
     position: relative;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
     padding: 0;
+    width: auto;
+    background: transparent;
+    border: none;
     opacity: 1;
     visibility: visible;
     pointer-events: all;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    transform: none;
+    transition: none;
+    z-index: 1000;
   }
 
   .nav-menu li {
     width: auto;
-    text-align: center;
   }
 
   .nav-menu a {
     display: inline-block;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
+    width: auto;
+    padding: 0.25rem 0.35rem;
+    font-size: 0.72rem;
     white-space: nowrap;
+    color: rgba(233, 232, 227, 0.75);
+    border-radius: 0;
+  }
+
+  .nav-menu a::before {
+    top: 100%;
+    transition: transform 0.4s ease;
+  }
+
+  .nav-menu a:hover {
+    background: transparent;
   }
 
   .nav-icon {
@@ -415,7 +456,9 @@
 @media (max-width: 480px) {
   .floating-navbar {
     top: 0.75rem;
-    padding: 0.5rem 0.75rem;
+    left: 52%;
+    transform: translateX(-50%);
+    padding: 0.45rem 0.55rem;
   }
 
   .main-heading {
@@ -431,21 +474,27 @@
   }
 
   .floating-navbar {
-    max-width: 98vw;
+    max-width: 99vw;
   }
 
   .nav-inner {
-    gap: 0.4rem;
+    gap: 0.25rem;
   }
 
   .nav-menu {
-    gap: 0.5rem;
-    padding: 0;
+    gap: 0.15rem;
   }
 
   .nav-menu a {
-    padding: 0.35rem 0.6rem;
-    font-size: 0.8rem;
+    font-size: 0.66rem;
+    padding: 0.2rem 0.25rem;
+  }
+
+  .nav-brand {
+    top: 1.25rem;
+    left: 0.6rem;
+    transform: none;
+    font-size: 0.85rem;
   }
 }
 
