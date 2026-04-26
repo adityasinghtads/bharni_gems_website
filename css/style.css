@@ -1,7 +1,7 @@
 /* Load Local Font */
 @font-face {
     font-family: 'Inkburrow';
-    src: url('/assets/fonts/Inkburro.ttf') format('truetype');
+    src: url('../assets/fonts/Inkburro.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
   }
